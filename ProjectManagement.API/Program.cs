@@ -44,6 +44,9 @@ try
 
     builder.Services.AddTransient<IEmailService, EmailService>();
     builder.Services.AddScoped<IJwtTokenGenerator, JwtTokenGenerator>();
+    builder.Services.AddScoped<IProjectService, ProjectService>();
+
+    builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
     var jwtSettings = builder.Configuration.GetSection("JwtSettings");
 

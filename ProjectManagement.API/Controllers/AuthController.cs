@@ -79,7 +79,7 @@ namespace ProjectManagement.API.Controllers
             var roles = await _userManager.GetRolesAsync(user);
             var token = _jwtTokenGenerator.GenerateToken(user, roles);
 
-            return Ok(new ApiResponse<object>(new { User = user.Email, Token = token, Roles = roles }, "Login Successful"));
+            return Ok(new ApiResponse<object>(new { User = user.Id, Token = token, Roles = roles }, "Login Successful"));
         }
 
         [HttpGet("verify-email")]
