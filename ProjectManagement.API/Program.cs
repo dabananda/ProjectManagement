@@ -45,6 +45,7 @@ try
     builder.Services.AddTransient<IEmailService, EmailService>();
     builder.Services.AddScoped<IJwtTokenGenerator, JwtTokenGenerator>();
     builder.Services.AddScoped<IProjectService, ProjectService>();
+    builder.Services.AddScoped<ITaskService, TaskService>();
 
     builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
